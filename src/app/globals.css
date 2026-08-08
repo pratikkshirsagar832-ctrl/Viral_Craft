@@ -78,25 +78,6 @@ body {
   animation-play-state: paused;
 }
 
-/* === Card spin (gol-gol ghoomta hua) === */
-@keyframes card-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.card-spin {
-  animation: card-spin 18s linear infinite;
-  will-change: transform;
-}
-
-.card-spin:hover {
-  animation-play-state: paused;
-}
-
 /* === Orbit marquee animations === */
 @keyframes float-soft {
   0%, 100% { transform: translateY(0); }
@@ -149,9 +130,6 @@ body {
 /* === Reduced motion === */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
-    animation: none;
-  }
-  .card-spin {
     animation: none;
   }
   *, *::before, *::after {
