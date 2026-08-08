@@ -78,6 +78,33 @@ body {
   animation-play-state: paused;
 }
 
+/* === Orbit marquee animations === */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes float-soft-rev {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.75); }
+  50% { opacity: 0.9; transform: scale(1.2); }
+}
+@keyframes pulse-orb {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.07); opacity: 0.8; }
+}
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-float-soft { animation: float-soft 6s ease-in-out infinite; }
+.animate-float-soft-rev { animation: float-soft-rev 7s ease-in-out infinite; }
+.animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+.animate-pulse-orb { animation: pulse-orb 4s ease-in-out infinite; }
+.animate-bounce-soft { animation: bounce-soft 2.2s ease-in-out infinite; }
+
 /* === Noise overlay === */
 .noise-overlay {
   position: fixed;
