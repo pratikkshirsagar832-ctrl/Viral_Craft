@@ -70,11 +70,29 @@ body {
 }
 
 .marquee-track {
-  animation: marquee 5s linear infinite;
+  animation: marquee 32s linear infinite;
   will-change: transform;
 }
 
 .marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track-reverse {
+  animation: marquee-reverse 26s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track-reverse:hover {
   animation-play-state: paused;
 }
 
@@ -130,6 +148,9 @@ body {
 /* === Reduced motion === */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
+    animation: none;
+  }
+  .marquee-track-reverse {
     animation: none;
   }
   *, *::before, *::after {
