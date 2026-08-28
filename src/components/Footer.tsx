@@ -1,119 +1,151 @@
 import Link from "next/link";
-import { Zap, Mail, Link2, AtSign } from "lucide-react";
+import { Mail, Link2, AtSign, ArrowRight, Phone, MapPin, Send } from "lucide-react";
+
+const PHONE = "+919170326268";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#EAE3D3] bg-[#F7F3EA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-flex mb-4">
-              <img src="/logo.jpeg" alt="Viral Craft" className="h-8 sm:h-10 w-auto" />
-            </Link>
-            <p className="text-sm text-[#6B6B65] leading-relaxed max-w-xs">
-              Boost your brand with high-impact short videos from our expert content creators.
-            </p>
-            <div className="flex items-center gap-3 mt-4">
-              <a href="https://instagram.com/viralcraftstudios" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#EAE3D3] flex items-center justify-center hover:bg-[#F4795A] hover:text-white transition-colors">
-                <AtSign className="w-4 h-4" />
-              </a>
-              <a href="https://twitter.com/viralcraft" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#EAE3D3] flex items-center justify-center hover:bg-[#F4795A] hover:text-white transition-colors">
-                <Link2 className="w-4 h-4" />
-              </a>
-              <a href="mailto:info@viralcraft.in" className="w-8 h-8 rounded-full bg-[#EAE3D3] flex items-center justify-center hover:bg-[#F4795A] hover:text-white transition-colors">
-                <Mail className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Product */}
-          <div>
-            <h3 className="text-xs font-semibold text-[#6B6B65] uppercase tracking-wider mb-4">Product</h3>
-            <ul className="space-y-3">
-              {["Brands", "Creators", "Use Cases"].map((item) => (
-                <li key={item}>
-                  <Link href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-sm text-[#1A1A1A] hover:text-[#F4795A] transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-xs font-semibold text-[#6B6B65] uppercase tracking-wider mb-4">Company</h3>
-            <ul className="space-y-3">
-              {["About", "Blog", "Careers", "Press"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm text-[#1A1A1A] hover:text-[#F4795A] transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="text-xs font-semibold text-[#6B6B65] uppercase tracking-wider mb-4">Resources</h3>
-            <ul className="space-y-3">
-              {["Help Center", "Community", "Guides", "API"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm text-[#1A1A1A] hover:text-[#F4795A] transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="text-xs font-semibold text-[#6B6B65] uppercase tracking-wider mb-4">Legal</h3>
-            <ul className="space-y-3">
-              {["Privacy", "Terms", "Cookies"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm text-[#1A1A1A] hover:text-[#F4795A] transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="relative overflow-hidden">
+      {/* Decorative top gradient */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#F4795A]/30 to-transparent" />
+      
+      <div className="bg-[#1A1A1A] relative">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-[#F4795A]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C8EFC0]/5 rounded-full blur-3xl" />
         </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+          {/* Top section */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-12">
+            {/* Brand */}
+            <div className="col-span-2 md:col-span-2">
+              <Link href="/" className="inline-flex mb-5">
+                <img src="/logo.jpeg" alt="Viral Craft" className="h-10 sm:h-12 w-auto" />
+              </Link>
+              <p className="text-base text-white/60 leading-relaxed max-w-sm mb-6">
+                Boost your brand with high-impact short videos from our expert content creators. Join 100,000+ creators worldwide.
+              </p>
+              
+              {/* Contact info */}
+              <div className="space-y-3 mb-6">
+                <a href={`tel:${PHONE}`} className="flex items-center gap-3 text-sm text-white/60 hover:text-[#F4795A] transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  {PHONE}
+                </a>
+                <a href="mailto:info@viralcraft.in" className="flex items-center gap-3 text-sm text-white/60 hover:text-[#F4795A] transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  info@viralcraft.in
+                </a>
+                <div className="flex items-center gap-3 text-sm text-white/60">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  India
+                </div>
+              </div>
+              
+              {/* Social links */}
+              <div className="flex items-center gap-3">
+                <a href="https://instagram.com/viralcraftstudios" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F4795A] hover:text-white transition-all duration-300 hover:scale-110">
+                  <AtSign className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com/viralcraft" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F4795A] hover:text-white transition-all duration-300 hover:scale-110">
+                  <Link2 className="w-5 h-5" />
+                </a>
+                <a href="mailto:info@viralcraft.in" className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F4795A] hover:text-white transition-all duration-300 hover:scale-110">
+                  <Send className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
 
-        {/* Newsletter */}
-        <div className="mt-10 pt-8 border-t border-[#EAE3D3]">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            {/* Product */}
             <div>
-              <h4 className="text-sm font-semibold text-[#1A1A1A]">Stay in the loop</h4>
-              <p className="text-xs text-[#6B6B65] mt-1">Get the latest from Viral Craft</p>
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Product</h3>
+              <ul className="space-y-3">
+                {["Brands", "Creators", "Use Cases"].map((item) => (
+                  <li key={item}>
+                    <Link href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-sm text-white/50 hover:text-[#F4795A] transition-colors duration-300 flex items-center gap-2 group">
+                      <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="flex w-full sm:w-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 sm:w-64 px-4 py-2.5 text-sm rounded-l-full border border-[#EAE3D3] border-r-0 bg-white text-[#1A1A1A] placeholder:text-[#6B6B65]/50 focus:outline-none focus:border-[#F4795A] transition-colors"
-              />
-              <button className="px-5 py-2.5 text-sm font-medium text-white bg-[#171717] rounded-r-full hover:bg-[#2A2A2A] transition-all duration-200 hover:scale-[1.03]">
-                Subscribe
-              </button>
+
+            {/* Company */}
+            <div>
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Company</h3>
+              <ul className="space-y-3">
+                {["About", "Blog", "Careers", "Press"].map((item) => (
+                  <li key={item}>
+                    <Link href="#" className="text-sm text-white/50 hover:text-[#F4795A] transition-colors duration-300 flex items-center gap-2 group">
+                      <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Resources</h3>
+              <ul className="space-y-3">
+                {["Help Center", "Community", "Guides", "API"].map((item) => (
+                  <li key={item}>
+                    <Link href="#" className="text-sm text-white/50 hover:text-[#F4795A] transition-colors duration-300 flex items-center gap-2 group">
+                      <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </div>
 
-        {/* Bottom bar */}
-        <div className="mt-8 pt-6 border-t border-[#EAE3D3] flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-[#6B6B65]">
-            &copy; {currentYear} Viral Craft. All rights reserved.
-          </p>
-          <p className="text-xs text-[#6B6B65]/60">
-            Crafted with care for creators
-          </p>
+          {/* Newsletter */}
+          <div className="mt-12 pt-10 border-t border-white/10">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">Stay in the loop</h4>
+                <p className="text-sm text-white/50">Get the latest from Viral Craft. No spam, ever.</p>
+              </div>
+              <div className="flex w-full lg:w-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 lg:w-72 px-5 py-3.5 text-sm rounded-l-2xl border border-white/10 border-r-0 bg-white/5 text-white placeholder:text-white/30 focus:outline-none focus:border-[#F4795A] transition-colors"
+                />
+                <button className="px-6 py-3.5 text-sm font-semibold text-white bg-[#F4795A] rounded-r-2xl hover:bg-[#E5623F] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(244,121,90,0.3)]">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-white/40">
+              &copy; {currentYear} Viral Craft. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link href="#" className="text-sm text-white/40 hover:text-white transition-colors">Privacy</Link>
+              <Link href="#" className="text-sm text-white/40 hover:text-white transition-colors">Terms</Link>
+              <Link href="#" className="text-sm text-white/40 hover:text-white transition-colors">Cookies</Link>
+            </div>
+            <p className="text-sm text-white/30">
+              Crafted with care for creators
+            </p>
+          </div>
         </div>
       </div>
     </footer>

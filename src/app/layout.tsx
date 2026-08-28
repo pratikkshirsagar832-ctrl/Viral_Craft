@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Viral Craft | Video Content Creator Marketing Agency",
+  title: "Viral Craft | Premium Video Content Creator Marketing Agency",
   description:
     "Boost Your Brand with High-Impact Short Videos from our expert content creators. Join over 100,000 happy creators using Viral Craft.",
   keywords: [
@@ -20,12 +20,21 @@ export const metadata: Metadata = {
     "UGC agency",
     "influencer marketing",
     "Viral Craft",
+    "creator economy",
+    "social media marketing",
   ],
   openGraph: {
-    title: "Viral Craft | Video Content Creator Marketing Agency",
+    title: "Viral Craft | Premium Video Content Creator Marketing Agency",
     description:
       "Boost Your Brand with High-Impact Short Videos from our expert content creators.",
     type: "website",
+    siteName: "Viral Craft",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Viral Craft | Premium Video Content Creator Marketing Agency",
+    description:
+      "Boost Your Brand with High-Impact Short Videos from our expert content creators.",
   },
 };
 
